@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>WebRTC File Share</title>
+		<link rel="stylesheet" href="css/index.css"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	</head>
+	<body>
+		<section>
+			<h1>Chat</h1>
+			<ul id="chat">
+				<template id="chat-message-tmpl">
+					<li></li>
+				</template>
+			</ul>
+			<div id="message-field">
+				<input type="text" id="txt-message" disabled/>
+				<button id="btn-send" disabled>Send</button>
+			</div>
+		</section>
+		<section>
+			<h1>Files</h1>
+			<div id="files">
+				<div class="local-files">
+					<h2>Local</h2>
+					<ul class="local-files-list" class="file-list">
+						<template id="local-file-tmpl">
+							<li class="file"><a></a></li>
+						</template>
+					</ul>
+				</div>
+				<div class="remote-files">
+					<h2>Remote</h2>
+					<ul class="remote-files-list" class="file-list">
+						<template id="remote-file-tmpl">
+							<li class="file"><a></a></li>
+						</template>
+					</ul>
+				</div>
+			</div>
+			<div id="transfer">
+			</div>
+		</section>
+		<div>
+			<button id="btn-create" disabled>Connect to Peer</button>
+		</div>
+		<script src="js/utilities.js"></script>
+		<script src="js/data-connection.js"></script>
+		<script src="js/event-messager.js"></script>
+		<script src="js/drop-zone.js"></script>
+		<script src="js/file-system.js"></script>
+		<script src="js/views/file-view.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

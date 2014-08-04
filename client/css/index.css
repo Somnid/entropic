@@ -1,0 +1,84 @@
+body {
+	font-family: arial;
+}
+h1 { 
+	padding: 0px;
+	margin: 0px;
+	font-size: 16px;
+}
+h2 {
+	padding: 0px;
+	margin: 0px;
+	font-size: 14px;
+	border-bottom: 1px solid black;
+	text-align: center;
+}
+section {
+	margin-bottom: 10px;
+}
+input {
+	box-sizing: border-box;
+	margin: 0px;
+}
+button {
+	box-sizing: border-box;
+	margin: 0px;
+}
+#chat {
+	border: 1px solid black;
+	width: 100%;
+	height: 200px;
+	padding: 0px;
+	margin: 0px;
+}
+#message-field{
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	padding: 5px 0px;
+}
+#txt-message {
+	border: 1px solid black;
+	flex-grow: 1;
+	margin-right: 5px;
+}
+#files {
+	height: 250px;
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	border: 1px solid black;
+	padding: 0px;
+	background: #efefef;
+}
+#files.dragover {
+	background: #A9E8B5;
+}
+.local-files,
+.remote-files{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	height: 100%;
+}
+.file-list {
+	flex-grow: 1;
+	margin: 0px;
+	padding: 0px;
+}
+.remote-files{
+	flex-grow: 1;
+	border-left: 1px solid black;
+	margin: 0px;
+}
+.local-files{
+	flex-grow: 1;
+	margin: 0px;
+}
+.file {
+	list-style: none;
+}
