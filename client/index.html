@@ -18,38 +18,43 @@
 				<button id="btn-send" disabled>Send</button>
 			</div>
 		</section>
-		<section>
-			<h1>Files</h1>
-			<div id="files">
-				<div class="local-files">
-					<h2>Local</h2>
-					<ul class="local-files-list" class="file-list">
-						<template id="local-file-tmpl">
-							<li class="file"><a></a></li>
-						</template>
-					</ul>
-				</div>
-				<div class="remote-files">
-					<h2>Remote</h2>
-					<ul class="remote-files-list" class="file-list">
-						<template id="remote-file-tmpl">
-							<li class="file"><a></a></li>
-						</template>
-					</ul>
-				</div>
-			</div>
-			<div id="transfer">
-			</div>
-		</section>
 		<div>
 			<button id="btn-create" disabled>Connect to Peer</button>
 		</div>
+		<file-system-view></file-system-view>
+		<template id="file-system-view-tmpl">
+			<section>
+				<h1>Files</h1>
+				<div id="files">
+					<div class="local-files">
+						<h2>Local</h2>
+						<ul class="local-files-list" class="file-list">
+						</ul>
+					</div>
+					<div class="remote-files">
+						<h2>Remote</h2>
+						<ul class="remote-files-list" class="file-list">
+						</ul>
+					</div>
+				</div>
+				<div id="transfer">
+				</div>
+			</section>
+		</template>
+		<template id="local-file-tmpl">
+			<li class="file"><a></a></li>
+		</template>
+		<template id="remote-file-tmpl">
+			<li class="file"><a></a></li>
+		</template>
 		<script src="js/utilities.js"></script>
+		<script src="js/tmpl.js"></script>
 		<script src="js/data-connection.js"></script>
 		<script src="js/event-messager.js"></script>
 		<script src="js/drop-zone.js"></script>
 		<script src="js/file-system.js"></script>
-		<script src="js/views/file-view.js"></script>
+		<script src="js/views/local-file-view.js"></script>
+		<script src="js/views/file-system-view.js"></script>
 		<script src="js/index.js"></script>
 	</body>
 </html>

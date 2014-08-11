@@ -11,11 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	var dataConnection;
 	var eventMessager = EventMessager.create();
 	
-	var fileView = FileView.create({
-		el : files,
-		localFileTmpl : localFileTmpl,
-		remoteFileTmpl : remoteFileTmpl
-	});
+	var fileSystemView = document.getElementsByTagName("file-system-view")[0];
 	
 	var fileSystem = FileSystem.create({
 		size : 100 * 1024 * 1024,
@@ -57,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function appendLocalFile(fileEntry){
-		fileView.localFileAdd(fileEntry);
+		fileSystemView.localFileAdd(fileEntry);
 		eventMessager.emit("file:add", {
 			name : fileEntry.name,
 			size : fileEntry.size,
@@ -74,10 +70,10 @@ document.addEventListener("DOMContentLoaded", function(){
 			onSocketOpen : socketOpen,
 			onChannelOpen : channelOpen
 		});
-		eventMessager.listen("file:add", fileView.remoteFileAdd);
+		eventMessager.listen("file:add", fileSystemView.remoteFileAdd);
 		eventMessager.listen("message:add", remoteMessageAdd);
 		getFiles();
-		DropZone.init(files, gotFile);
+		DropZone.init(fileSystemView, gotFile);
 		startButton.addEventListener("click", dataConnection.connect);
 		sendButton.addEventListener("click", send);
 	}

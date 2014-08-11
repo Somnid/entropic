@@ -143,8 +143,6 @@ var DataConnection = (function(){
 		dataConnection.answerRemoteDescriptionDone = answerRemoteDescriptionDone.bind(dataConnection);
 		dataConnection.send = send.bind(dataConnection);
 		
-		//dataConnection.createDataChannel();
-		
 		return dataConnection;
 	}
 	
